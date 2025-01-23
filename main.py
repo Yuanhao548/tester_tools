@@ -2,7 +2,8 @@ import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QTabWidget, QWidget, QVBoxLayout, QHBoxLayout
 from PyQt5.QtGui import QFont
 from tools_layout.generate_excel_model_data import Tab1
-from tools_layout.extract_json_data import Tab2
+from tools_layout.batch_send_http_request import Tab2
+from tools_layout.time_format_processsing import Tab3
 
 version = 1.0
 
@@ -40,10 +41,13 @@ class MainWindow(QMainWindow):
 
         tab1 = Tab1()
         tab2 = Tab2()
+        tab3 = Tab3()
 
         # 将选项卡添加到 QTabWidget 中
         tab_widget.addTab(tab1, "按Excel模板生成数据")
-        tab_widget.addTab(tab2, "提取json并解析")
+        # tab_widget.addTab(tab2, "批量发送HTTP请求")
+        tab_widget.addTab(tab2, "提取json中的数据")
+        tab_widget.addTab(tab3, "时间格式处理")
 
         # 将 QTabWidget 放置在 tab_layout 中
         tab_layout.addWidget(tab_widget)

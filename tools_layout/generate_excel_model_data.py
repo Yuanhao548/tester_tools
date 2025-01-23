@@ -93,11 +93,7 @@ class ChildDialog(QDialog, ConfWidgetFuncEncap):
             self.tab1_grid_layout.addWidget(QLabel(_v), _i, 0)  # 在第 i 行，第 0 列添加标签
             self.tab1_grid_layout.addWidget(tab1_combobox, _i, 1)  # 在第 i 行，第 1 列添加按钮
 
-        # 创建一个水平分割线
-        horizontal_separator = QFrame(self)
-        horizontal_separator.setFrameShape(QFrame.HLine)
-        horizontal_separator.setFrameShadow(QFrame.Sunken)
-        self.layout().addWidget(horizontal_separator)
+        self.create_line(self.layout())
 
         generate_data_layout = QHBoxLayout()
         self.layout().addLayout(generate_data_layout)

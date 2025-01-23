@@ -1,5 +1,5 @@
 from PyQt5.QtGui import QIntValidator
-from PyQt5.QtWidgets import QMessageBox, QWidget
+from PyQt5.QtWidgets import QMessageBox, QWidget, QFrame
 
 
 class ConfWidgetFuncEncap:
@@ -43,3 +43,19 @@ class ConfWidgetFuncEncap:
                 print(f"Cleared widget at ({row}, {column})")
         else:
             print(f"No widget at ({row}, {column})")
+
+    @staticmethod
+    def add_widget_to_layout(layout, widget):
+        layout.addWidget(widget)
+
+    @staticmethod
+    def clear_plain_text(plain_text_edit):
+        plain_text_edit.clear()
+
+    def create_line(self, layout, frame_shape='HLine'):
+        # 创建一个水平分割线并添加到当前布局
+        horizontal_separator = QFrame()
+        horizontal_separator.setFrameShape(getattr(QFrame, frame_shape))
+        horizontal_separator.setFrameShadow(QFrame.Sunken)
+        # layout.addWidget(horizontal_separator)
+        self.add_widget_to_layout(layout, horizontal_separator)
