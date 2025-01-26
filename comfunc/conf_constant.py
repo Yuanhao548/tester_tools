@@ -1,0 +1,1 @@
+RE_PATTERN_WITH_PARENTHESES = r'\([^)]*\)'

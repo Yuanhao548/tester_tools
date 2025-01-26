@@ -12,7 +12,7 @@ class MainWindow(QMainWindow):
         super().__init__()
 
         self.setWindowTitle(f"测试者工具{version}")
-        self.setGeometry(100, 100, 500, 500)
+        self.setGeometry(100, 100, 1000, 500)
         # 创建一个主部件，用于放置布局
         main_widget = QWidget()
         self.setCentralWidget(main_widget)
