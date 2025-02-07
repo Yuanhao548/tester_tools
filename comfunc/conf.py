@@ -1,5 +1,7 @@
 import ast
 import json
+import os
+import sys
 
 
 def is_parentheses_matched(pattern):
@@ -73,3 +75,15 @@ def parse_json_path(json_data, json_path):
         return current_data
     else:
         raise Exception('JSONDecodeError异常，源数据不是有效的 JSON 格式')
+
+def get_file_path(file_name, dir_name='static'):
+    if getattr(sys, 'frozen', False):
+        # 如果是打包后的可执行文件
+        sys_dir = sys._MEIPASS
+    else:
+    # 如果是开发环境
+        from main import base_dir
+        sys_dir = base_dir
+
+    file_path = os.path.join(sys_dir, dir_name, file_name)
+    return file_path

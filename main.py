@@ -1,3 +1,4 @@
+import os
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QTabWidget, QWidget, QVBoxLayout, QHBoxLayout
 from PyQt5.QtGui import QFont
@@ -6,6 +7,7 @@ from tools_layout.batch_send_http_request import Tab2
 from tools_layout.time_format_processsing import Tab3
 
 version = 1.0
+base_dir = os.path.dirname(os.path.abspath(__file__))
 
 class MainWindow(QMainWindow):
     def __init__(self):

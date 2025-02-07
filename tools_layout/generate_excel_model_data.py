@@ -2,6 +2,7 @@ from PyQt5.QtGui import QIcon, QIntValidator
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QFileDialog, QGridLayout, QComboBox, \
     QFrame, QHBoxLayout, QMessageBox, QDialog
 
+from comfunc.conf import get_file_path
 from comfunc.confwidget_operate_encapsulation import ConfWidgetFuncEncap
 from comfunc.mock_data import mock_datas
 from comfunc.operate_excel import read_excel_by_row, load_excel_and_write_mock
@@ -21,7 +22,8 @@ class Tab1(QWidget, ConfWidgetFuncEncap):
 
         self.open_excel_button = QPushButton()
         self.open_excel_button.clicked.connect(self.open_file)  # 连接按钮点击事件
-        icon = QIcon("picture/EXCEL.png")  # 请将 "path_to_your_icon.png" 替换为你实际的图标文件路径
+        excel_icon_path = get_file_path('EXCEL.ico')
+        icon = QIcon(excel_icon_path)  # 请将 "path_to_your_icon.png" 替换为你实际的图标文件路径
         self.open_excel_button.setIcon(icon)
         self.open_excel_button.setIconSize(icon.actualSize(self.open_excel_button.iconSize()))  # 使图标大小与按钮大小匹配
         self.open_excel_button.setFixedSize(100, 100)  # 设置按钮的固定大小
